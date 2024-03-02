@@ -141,7 +141,7 @@ services:
       - XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY=${ENCRYPTION_KEY}
       - XPACK_REPORTING_ENCRYPTIONKEY=${ENCRYPTION_KEY}
       - xpack.security.enabled=true
-      - server.publicBaseUrl=http://178.170.194.42
+      - server.publicBaseUrl=http://178.170.194.42/
     mem_limit: ${KB_MEM_LIMIT}
     healthcheck:
       test:
