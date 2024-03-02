@@ -114,6 +114,7 @@ services:
         [
           "CMD-SHELL",
           "curl -s --cacert config/certs/ca/ca.crt http://localhost:9200 | grep -q 'missing authentication credentials'",
+          "curl -s  --cacert config"
         ]
       interval: 10s
       timeout: 10s
@@ -229,4 +230,4 @@ services:
       - 443:443
     volumes:
       - ./config/nginx/nginx.conf:/etc/nginx/nginx.conf
-      - './config/nginx/.htpasswd:/etc/nginx/.htpasswd:ro'
+      - './config/nginx/.htpasswd:/etc/nginx/htpasswd.kibana:ro'
