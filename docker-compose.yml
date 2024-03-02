@@ -79,7 +79,7 @@ services:
     depends_on:
       setup:
         condition: service_healthy
-    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    image: elasticsearch:${STACK_VERSION}
     labels:
       co.elastic.logs/module: elasticsearch
     volumes:
@@ -123,7 +123,7 @@ services:
     depends_on:
       es01:
         condition: service_healthy
-    image: docker.elastic.co/kibana/kibana:${STACK_VERSION}
+    image: kibana:${STACK_VERSION}
     labels:
       co.elastic.logs/module: kibana
     volumes:
@@ -157,7 +157,7 @@ services:
         condition: service_healthy
       kibana:
         condition: service_healthy
-    image: docker.elastic.co/beats/metricbeat:${STACK_VERSION}
+    image: elastic/metricbeat:${STACK_VERSION}
     user: root
     volumes:
       - certs:/usr/share/metricbeat/certs
@@ -180,7 +180,7 @@ services:
     depends_on:
       es01:
         condition: service_healthy
-    image: docker.elastic.co/beats/filebeat:${STACK_VERSION}
+    image: elastic/filebeat:${STACK_VERSION}
     user: root
     volumes:
       - certs:/usr/share/filebeat/certs
@@ -204,7 +204,7 @@ services:
         condition: service_healthy
       kibana:
         condition: service_healthy
-    image: docker.elastic.co/logstash/logstash:${STACK_VERSION}
+    image: logstash:${STACK_VERSION}
     labels:
       co.elastic.logs/module: logstash
     user: root
