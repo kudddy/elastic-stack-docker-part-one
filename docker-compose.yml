@@ -139,7 +139,8 @@ services:
        - XPACK_SECURITY_ENCRYPTIONKEY=${ENCRYPTION_KEY}
        - XPACK_ENCRYPTEDSAVEDOBJECTS_ENCRYPTIONKEY=${ENCRYPTION_KEY}
        - XPACK_REPORTING_ENCRYPTIONKEY=${ENCRYPTION_KEY}
-       - server.publicBaseUrl=https://i-see-you.ru/kibana/
+       - server.publicBaseUrl=https://i-see-you.ru/kibana
+       - SERVER_BASEPATH=/kibana
      mem_limit: ${KB_MEM_LIMIT}
      healthcheck:
        test:
