@@ -188,3 +188,40 @@ services:
       - ELASTIC_HOSTS=https://es01:9200
       - KIBANA_HOSTS=http://kibana:5601
       - LOGSTASH_HOSTS=http://logstash01:9600
+  gitlab:
+    container_name: gitlab
+    image: 'gitlab/gitlab-ce:latest'
+    restart: always
+    hostname: 'i-see-you.ru'
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'https://i-see-you.ru/gitlab'
+        # Add any other gitlab.rb configuration here, each on its own line
+        nginx['listen_port'] = 80
+        nginx['listen_https'] = false
+        nginx['proxy_set_headers'] = {
+          "Host" => "$http_host_with_default",
+          "X-Real-IP" => "$remote_addr",
+          "X-Forwarded-For" => "$proxy_add_x_forwarded_for",
+          "X-Forwarded-Proto" => "https",
+          "X-Forwarded-Ssl" => "on",
+          "Upgrade" => "$http_upgrade",
+          "Connection" => "$connection_upgrade"
+        }
+    ports:
+      - '8056:80'
+    volumes:
+      - '/opt/gitlab/config:/etc/gitlab'
+      - '/opt/gitlab/logs:/var/log/gitlab'
+      - '/opt/gitlab/data:/var/opt/gitlab'
+
+#  gitlab-runner:
+#    container_name: gitlab-runner
+#    image: gitlab/gitlab-runner:latest
+#    restart: always
+#    volumes:
+#      - '/opt/gitlab-runner/data:/home/gitlab_ci_multi_runner/data'
+#      - '/opt/gitlab-runner/config:/etc/gitlab-runner'
+#      - '/var/run/docker.sock:/var/run/docker.sock:rw'
+#    environment:
+#      - CI_SERVER_URL=https://185.185.185.185/ci
