@@ -197,17 +197,17 @@ services:
       GITLAB_OMNIBUS_CONFIG: |
         external_url 'https://i-see-you.ru/gitlab'
         # Add any other gitlab.rb configuration here, each on its own line
-        nginx['listen_port'] = 80
-        nginx['listen_https'] = false
-        nginx['proxy_set_headers'] = {
-          "Host" => "https://i-see-you.ru",
-          "X-Real-IP" => "$remote_addr",
-          "X-Forwarded-For" => "$proxy_add_x_forwarded_for",
-          "X-Forwarded-Proto" => "https",
-          "X-Forwarded-Ssl" => "on",
-          "Upgrade" => "$http_upgrade",
-          "Connection" => "$connection_upgrade"
-        }
+        # Disable the built-in nginx
+        nginx['enable'] = false
+
+        # Disable the built-in puma
+        puma['enable'] = false
+
+        # Set the internal API URL
+        gitlab_rails['internal_api_url'] = 'https://i-see-you.ru/gitlab'
+
+        # Define the web server process user (ubuntu/nginx)
+        web_server['external_users'] = ['www-data']
     ports:
       - '8056:80'
     volumes:
