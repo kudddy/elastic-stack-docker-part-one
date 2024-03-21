@@ -199,6 +199,7 @@ services:
         # Add any other gitlab.rb configuration here, each on its own line
         nginx['listen_port'] = 80
         nginx['listen_https'] = false
+        nginx['referrer_policy'] = false
         nginx['proxy_set_headers'] = {
           "Host" => "$http_host_with_default",
           "X-Real-IP" => "$remote_addr",
