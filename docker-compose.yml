@@ -210,9 +210,10 @@ services:
     ports:
       - '8056:80'
     volumes:
-      - '/opt/gitlab/config:/etc/gitlab'
+      - './config/gitlab/config/gitlab.rb:/etc/gitlab/gitlab.rb'
+      - './config/gitlab/config:/etc/gitlab'
       - '/opt/gitlab/logs:/var/log/gitlab'
-      - '/opt/gitlab/data:/var/opt/gitlab'
+      - './config/gitlab/data:/var/opt/gitlab'
 
   gitlab-runner:
     container_name: gitlab-runner
