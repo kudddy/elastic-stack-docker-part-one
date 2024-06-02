@@ -939,10 +939,10 @@ gitlab_rails['smtp_pool'] = false
 # registry_external_url 'https://i-see-you.ru'
 
 ### Settings used by GitLab application
-gitlab_rails['registry_enabled'] = true
+# gitlab_rails['registry_enabled'] = true
 # gitlab_rails['registry_host'] = "i-see-you.ru"
-gitlab_rails['registry_port'] = "5005"
-gitlab_rails['registry_path'] = "/var/opt/gitlab/gitlab-rails/shared/registry"
+# gitlab_rails['registry_port'] = "5005"
+# gitlab_rails['registry_path'] = "/var/opt/gitlab/gitlab-rails/shared/registry"
 
 # Notification secret, it's used to authenticate notification requests to GitLab application
 # You only need to change this when you use external Registry service, otherwise
@@ -956,20 +956,20 @@ gitlab_rails['registry_path'] = "/var/opt/gitlab/gitlab-rails/shared/registry"
 # gitlab_rails['registry_issuer'] = "omnibus-gitlab-issuer"
 
 ### Settings used by Registry application
-# registry['enable'] = true
+registry['enable'] = true
 # registry['username'] = "registry"
 # registry['group'] = "registry"
 # registry['uid'] = nil
 # registry['gid'] = nil
-# registry['dir'] = "/var/opt/gitlab/registry"
-# registry['registry_http_addr'] = "127.0.0.1:5000"
+registry['dir'] = "/var/opt/gitlab/registry"
+registry['registry_http_addr'] = "127.0.0.1:5000"
 # registry['debug_addr'] = "localhost:5001"
 # registry['log_directory'] = "/var/log/gitlab/registry"
 # registry['env_directory'] = "/opt/gitlab/etc/registry/env"
 # registry['env'] = {
 #   'SSL_CERT_DIR' => "/opt/gitlab/embedded/ssl/certs/"
 # }
-# registry['log_level'] = "info"
+registry['log_level'] = "info"
 # registry['log_formatter'] = "text"
 # registry['rootcertbundle'] = "/var/opt/gitlab/registry/certificate.crt"
 # registry['health_storagedriver_enabled'] = true
@@ -2264,7 +2264,7 @@ registry_nginx['enable'] = true
 
 # When the registry is automatically enabled using the same domain as `external_url`,
 # it listens on this port
-registry_nginx['listen_port'] = 5005
+# registry_nginx['listen_port'] = 5005
 
 ################################################################################
 ## Prometheus
