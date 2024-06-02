@@ -209,7 +209,7 @@ services:
         }
     ports:
       - '8056:80'
-      - '5000:5000'
+      - '5000:5005'
     volumes:
       - './config/gitlab/config/gitlab.rb:/etc/gitlab/gitlab.rb'
       - './config/gitlab/config:/etc/gitlab'
