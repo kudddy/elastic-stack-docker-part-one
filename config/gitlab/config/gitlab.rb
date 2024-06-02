@@ -935,12 +935,12 @@ gitlab_rails['smtp_pool'] = false
 ## Container Registry settings
 ##! Docs: https://docs.gitlab.com/ee/administration/packages/container_registry.html
 ################################################################################
-
-registry_external_url 'https://i-see-you.ru'
+#
+# registry_external_url 'https://i-see-you.ru'
 
 ### Settings used by GitLab application
 gitlab_rails['registry_enabled'] = true
-gitlab_rails['registry_host'] = "i-see-you.ru"
+# gitlab_rails['registry_host'] = "i-see-you.ru"
 gitlab_rails['registry_port'] = "5005"
 gitlab_rails['registry_path'] = "/var/opt/gitlab/gitlab-rails/shared/registry"
 
