@@ -936,7 +936,7 @@ gitlab_rails['smtp_pool'] = false
 ##! Docs: https://docs.gitlab.com/ee/administration/packages/container_registry.html
 ################################################################################
 
-registry_external_url 'https://i-see-you.ru/registry'
+registry_external_url 'https://i-see-you.ru'
 
 ### Settings used by GitLab application
 gitlab_rails['registry_enabled'] = true
