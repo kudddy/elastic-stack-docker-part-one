@@ -2252,7 +2252,7 @@ registry['log_level'] = "info"
 # `registry_nginx['some_setting']` and should be set separately.
 
 # Below you can find settings that are exclusive to "Registry NGINX"
-# registry_nginx['enable'] = true
+registry_nginx['enable'] = true
 
 # registry_nginx['proxy_set_headers'] = {
 #  "Host" => "$http_host",
@@ -2264,7 +2264,7 @@ registry['log_level'] = "info"
 
 # When the registry is automatically enabled using the same domain as `external_url`,
 # it listens on this port
-# registry_nginx['listen_port'] = 5000
+registry_nginx['listen_port'] = 5005
 
 ################################################################################
 ## Prometheus
