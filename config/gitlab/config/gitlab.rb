@@ -2265,6 +2265,7 @@ registry_nginx['enable'] = true
 # When the registry is automatically enabled using the same domain as `external_url`,
 # it listens on this port
 registry_nginx['listen_port'] = 5005
+registry_nginx['server_name'] = "i-see-you.ru"
 
 ################################################################################
 ## Prometheus
