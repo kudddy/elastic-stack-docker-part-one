@@ -940,7 +940,7 @@ gitlab_rails['smtp_pool'] = false
 
 ### Settings used by GitLab application
 # gitlab_rails['registry_enabled'] = true
-# gitlab_rails['registry_host'] = "i-see-you.ru"
+gitlab_rails['registry_host'] = "i-see-you.ru"
 # gitlab_rails['registry_port'] = "5005"
 # gitlab_rails['registry_path'] = "/var/opt/gitlab/gitlab-rails/shared/registry"
 
@@ -2265,7 +2265,6 @@ registry_nginx['enable'] = true
 # When the registry is automatically enabled using the same domain as `external_url`,
 # it listens on this port
 registry_nginx['listen_port'] = 5005
-registry_nginx['server_name'] = "i-see-you.ru"
 
 ################################################################################
 ## Prometheus
