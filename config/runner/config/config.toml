@@ -7,7 +7,7 @@ shutdown_timeout = 0
 
 [[runners]]
   name = "myfirstrunner"
-  url = "http://172.18.0.2:80/gitlab"
+  url = "https://i-see-you.ru/gitlab/"
   id = 2
   token = "glrt-JukhJxxa8Qyyz4cKZM95"
   token_obtained_at = 2024-04-04T16:15:11Z
